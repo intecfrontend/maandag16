@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+
+</head>
+<!--https://www.youtube.com/watch?v=I4kHTNOHkBY-->
+
+<body>
+    <div id="app">
+        <div v-for="band in bands">
+            <h1> {{band.name}} </h1>
+            <h6>{{band.origin}}</h6>
+            <img v-bind:src="band.image" width="200" />
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+
+            data: {
+                //message: "hello there!"
+                bands: [{
+                    name: "Bayside",
+                    origin: "Queens, NYC",
+                    image: "./pics/1.jpg"
+                }, {
+                    name: "Adèle",
+                    origin: "London, UK",
+                    image: "2.jpg"
+                }, {
+                    name: "Silverstein",
+                    origin: "Toronto, Canada",
+                    image: "./pics/3.jpg"
+                }, ]
+            }
+
+        });
+    </script>
+</body>
+
+</html>
