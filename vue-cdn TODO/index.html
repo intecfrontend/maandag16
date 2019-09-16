@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Vue.js: Build a Todo App</title>
+    <link rel="stylesheet" href="https://ez-css.now.sh">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+
+<body>
+    <main id="app">
+        <h3>{{title}}</h3>
+        <!--preventing the default action-->
+        <form @submit.prevent="addTodo"><label for="newTodoNew Todo"></label>
+            <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="defaultwaarde">
+            <button type="submit" name="button">Add Todo</button>
+        </form>
+        <h4>{{newTodo}}</h4>
+    </main>
+
+    <script src="app.js" charset="UTF-8"></script>
+</body>
+
+</html>

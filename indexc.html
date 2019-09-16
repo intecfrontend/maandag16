@@ -12,22 +12,21 @@
 <!--https://www.youtube.com/watch?v=I4kHTNOHkBY-->
 
 <body>
+    Sign up:
     <div id="app">
-        {{message}}
-        <!--1/ <input type="text" v-model="message"> -->
-
-
-    </div>
-    <script>
-        new Vue({
+        <input v-model="email">
+        <button onclick="alert('signed up')" v-bind:disabled='email.length <4'> send</button> </div> <script>
+            
+            
+            new Vue({
             el: '#app',
 
             data: {
-                message: "hello there!"
+            email: ''
             }
 
-        });
-    </script>
+            });
+            </script>
 </body>
 
 </html>

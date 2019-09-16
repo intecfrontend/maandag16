@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Vue.js: Build a Todo App</title>
+    <link rel="stylesheet" href="https://ez-css.now.sh">
+    <style>
+        .done {
+            text-decoration: line-through
+        }
+    </style>
+</head>
+
+<body>
+    <main id="app">
+        <h3>{{title}}</h3>
+        <!--preventing the default action-->
+        <form @submit.prevent="addTodo">
+            <label for="newTodo"></label>
+            <input v-model="newTodo" type="text" name="newTodo" id="newTodo" value="">
+            <button type="submit" name="button">Add Todo</button>
+            <button @click="allDone" type="button">All done</button> </li>
+            <button @click="removeTodos(todos)" type="button">REMOVE ALL</button> </li>
+
+        </form>
+
+
+        <ul>
+            <li v-for="todo in todos">
+
+                <input type="checkbox" v-model="todo.done">
+                <!--: binding colon-->
+                <span :class="{done: todo.done}">{{todo.title}}</span>
+                <button @click="removeTodo(todo)" type="button">remove</button> </li>
+        </ul>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="app.js" charset="UTF-8"></script>
+</body>
+
+</html>

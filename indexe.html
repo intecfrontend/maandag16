@@ -10,20 +10,34 @@
 
 </head>
 <!--https://www.youtube.com/watch?v=I4kHTNOHkBY-->
+<style>
+    .red {
+        border: 2px solid red;
+    }
+
+    .green {
+        border: 2px solid greenyellow;
+    }
+</style>
 
 <body>
+    Sign up:
     <div id="app">
-        {{message}}
-        <!--1/ <input type="text" v-model="message"> -->
-
-
+        <ul>
+            <li v-for="cat in cats">{{cat}}</li>
+        </ul>
     </div>
     <script>
         new Vue({
             el: '#app',
 
             data: {
-                message: "hello there!"
+                cats: [
+                    'kitkat',
+                    'minou',
+                    'gaspard',
+                    'missy'
+                ]
             }
 
         });

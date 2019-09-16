@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+
+</head>
+<!--https://www.youtube.com/watch?v=I4kHTNOHkBY-->
+<style>
+    .red {
+        border: 2px solid red;
+    }
+
+    .green {
+        border: 2px solid greenyellow;
+    }
+</style>
+
+<body>
+    <div id="app">
+        {{kittifyName}}
+        <input v-model="newCat" v-on:keyup.enter="addCat">
+        <!--<button v-on:click="addCat">
+            Add
+        </button>-->
+        <ul>
+            <li v-for="cat in cats">{{cat.name}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+
+            data: {
+                cats: [{
+                        name: 'kitkat'
+                    },
+                    {
+                        name: 'minou'
+                    },
+                    {
+                        name: 'gaspard'
+                    },
+                    {
+                        name: 'missy'
+                    }
+                ],
+                newCat: ''
+            },
+            methods: {
+                addCat: function () {
+                    this.cats.push({
+                        name: this.newCat
+                    })
+                    this.newCat = ''
+                }
+            },
+
+            /*add catname with y doesn't work*/
+            computed: {
+                
+            }
+
+        });
+    </script>
+</body>
+
+</html>
